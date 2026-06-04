@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #9b27af;
+}
+
+/* ── CARD ── */
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px 28px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+/* ── TÍTULO ── */
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* ── BOTÕES SOCIAIS ── */
+
+.social-btns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-facebook,
+.btn-twitter {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 0;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+
+.btn-facebook:hover,
+.btn-twitter:hover { opacity: .88; }
+
+.btn-facebook { background: #1877f2; }
+.btn-twitter  { background: #1da1f2; }
+
+/* ── INPUTS ── */
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  padding: 0 12px;
+  margin-bottom: 14px;
+  transition: border-color .2s;
+}
+
+.input-group:focus-within {
+  border-color: #9b27af;
+}
+
+.input-group > i {
+  color: #aaa;
+  font-size: 15px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.input-group input {
+  width: 100%;
+  height: 44px;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: transparent;
+}
+
+.input-group input::placeholder { color: #bbb; }
+
+/* ── TOOLTIP de validação ── */
+
+.tooltip {
+  display: none;          /* escondido por padrão */
+  position: absolute;
+  bottom: -44px;
+  left: 0;
+  background: #fff;
+  border: 1.5px solid #f0ad00;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.tooltip i {
+  color: #f0ad00;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+/* Triângulo acima do tooltip */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 16px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 8px solid #f0ad00;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 17px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 7px solid #fff;
+}
+
+/*
+  Mostra o tooltip quando:
+  - o checkbox #form-submit está marcado (usuário clicou em "Login")
+  - E o input está inválido (vazio ou mal formatado)
+*/
+#form-submit:checked ~ .form-body .input-group input:invalid ~ .tooltip {
+  display: flex;
+  align-items: center;
+}
+
+/* Borda vermelha no input inválido após tentativa */
+#form-submit:checked ~ .form-body .input-group input:invalid {
+  border-color: transparent;
+}
+
+#form-submit:checked ~ .form-body .input-group:has(input:invalid) {
+  border-color: #e74c3c;
+}
+
+/* ── OPTIONS ── */
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+
+.remember input[type="checkbox"] {
+  accent-color: #9b27af;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.forgot {
+  font-size: 13px;
+  color: #9b27af;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot:hover { opacity: .75; }
+
+/* ── BOTÃO LOGIN ── */
+
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background: #9b27af;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background .2s, transform .15s;
+  margin-bottom: 18px;
+}
+
+.btn-login:hover {
+  background: #7b1fa2;
+  transform: translateY(-1px);
+}
+
+/* ── SIGNUP ── */
+
+.signup-text {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.signup-text a {
+  color: #9b27af;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover { opacity: .75; }
