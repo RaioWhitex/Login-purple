@@ -1,4 +1,4 @@
-# 🔐 FrostLogin UI
+# 🔐 LoginPurple UI
 
 Uma interface moderna de autenticação desenvolvida com foco em simplicidade, elegância e experiência do usuário, utilizando um visual clean com cores vibrantes e elementos modernos para formulários de login.
 
